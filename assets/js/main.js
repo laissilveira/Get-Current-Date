@@ -13,4 +13,8 @@ let textWeekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frid
 
 const texto = document.querySelector('.texto');
 
-texto.innerHTML = `${textWeekDay[weekDay]}, ${textMonth[month]} ${day}, ${year}. ${hour}:${minute}.`
+function zeroLeft(num) {
+    return num < 10 ? `0${num}` : num;
+}
+
+texto.innerHTML = `${textWeekDay[weekDay]}, ${textMonth[month]} ${zeroLeft(day)}, ${year}. ${zeroLeft(hour)}:${zeroLeft(minute)}.`
